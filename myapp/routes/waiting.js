@@ -4,11 +4,8 @@ var mysql = require('mysql2');
 
 // Database connection & creation
 var con = mysql.createPool({
-  host: "yamanote.proxy.rlwy.net",
-  port: "30831",
-  database: "railway",
-  user: "root",
-  password: "yMdXBhOeslFOqRfhbbHUWUlijPQZtLlI"
+  //Connecte à la base de donnée 
+  //XXXXXXXXXX
 });
 
 /* GET home page. */

@@ -9,11 +9,8 @@ let user = { pseudo: null, id: null, power: null, time: null, id: null, admin: f
 let admin = false
 
 var con = mysql.createPool({
-  host: "yamanote.proxy.rlwy.net",
-  port: "30831",
-  database: "railway",
-  user: "root",
-  password: "yMdXBhOeslFOqRfhbbHUWUlijPQZtLlI"
+  //Connecte à la base de donnée 
+  //XXXXXXXXXX
 });
 
 function setSocketIo(socketIo) {
