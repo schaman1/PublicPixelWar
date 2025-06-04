@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Challenge</title>
+    
+    <script>
+    // Les données sont injectées par le serveur
+    const pixelsBdd = <%- JSON.stringify(pixels) %>;
+    const popup = <%- JSON.stringify(popup) %>;
+    const pseudo = <%- JSON.stringify(pseudo) %>;
+    const canvaSize = <%- JSON.stringify(gridSize) %>;
+    const powerRaid = <%- JSON.stringify(powerRaid) %>;
+    const powerBase = <%- JSON.stringify(powerBase) %>;
+    const hourRaid = <%- JSON.stringify(hourRaid) %>;
+    const delay = <%- JSON.stringify(delay) %>;
+    const delayRaid = <%- JSON.stringify(delayRaid) %>;
+    </script>
+
+</head>
+<body>
+    <a href="/utils?pseudo=<%= encodeURIComponent(pseudo) %>">Crédits</a>
+    <div class="background", id='bgGoogle'></div>
+    <div class = "containerTop">
+        <div class="containerTopTittle">
+            <h1 style="margin-top: 7px;">Prochain raid :</h1>
+            <h2 id="nextRaid"> <%= nextRaid %></h2>
+        </div>
+
+    </div>
+
+    <div class="container" id = 'container'>
+        <canvas id="pixelCanvas"></canvas>
+        <div class="bubble" id="bubble"></div>
+
+
+        <h2 id="affichePseudo"> <%= pseudo %></h2>
+        <div class="containerBottom">
+            
+            <div class="color-grid" id="color-grid"></div>
+            
+            <div class="animation" id="animation">
+                <div class=containerPower data-count = <%= power %> data-time = <%= time%> id ="containerPower"></div>
+            </div>
+        </div>  
+        
+    </div>
+
+    <script>
+        admin = <%- JSON.stringify(admin) %>;
+    </script>
+    <button id="BtnReload" class="BtnReload" style="display:none; z-index : 4">Button Admin</button>
+
+    
+    <script src="javascripts/grid-script.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>

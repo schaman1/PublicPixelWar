@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylesheets/stylesGoogle.css">
+</head>
+<body>
+
+    <div id="g_id_onload"
+        data-client_id="435477578567-5pnm940jdum7dusda7e4vkdh495g08ls.apps.googleusercontent.com"
+        data-callback="onGoogleSignIn">
+
+    </div>
+
+    <div class="googleBox">
+        <!-- Faux bouton -->
+        <label id="googleBtn" class="google-custom-btn">
+            <span style="vertical-align:middle;">Connexion Google</span>
+        </label>
+
+        <!-- Vrai bouton invisible mais cliquable -->
+        <div class="g_id_signin" data-type="standard"></div>
+    </div>
+
+    <div class="controls">
+        <%= info %>
+    </div>
+    <script src="javascripts/google-script.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>

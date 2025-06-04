@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none; /* Safari/iOS */
+    -ms-user-select: none;  
+}
+
+.BtnReload {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20; /* supérieur à .background */
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.background {
+    display : flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bgGrid.png');
+    background-size: cover;      /* ajuste l'image sans déformation */
+    background-position: center; /* centre l'image */
+    background-repeat: no-repeat;
+    transition : transform 2s cubic-bezier(.67,0,.08,.9);
+    z-index: 11; /* derrière le reste du contenu */
+}
+.background.slide-up {
+    transform: translateY(-100vh);
+}
+
+
+.containerTop{
+    position : relative;
+    height:10dvh;
+    width : 100dvw;
+    margin: 5% auto; /* CENTRE le container horizontalement */
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerTopTittle{
+    display: flex;
+    position : relative;
+    width : 250px;
+    margin: 5% auto 0% auto; /* CENTRE le container horizontalement */
+    border-radius: 40px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ff8400a2;
+    border: 0.5dvh solid #000000;
+    z-index: 4;
+}
+
+.animation{
+    backface-visibility: visible;
+}
+
+h1 {
+    margin-bottom: 1vh;
+}
+
+.containerTop button{
+    background-color: #000000;
+    color : white;
+}
+
+.container {
+    display: flex;
+    position : absolute;
+    height:100dvh;
+    width : 100dvw;
+    perspective: 1000px;/*Pour la 3d*/
+    top: 0dvw;
+    overflow: hidden; /* Empêche la grille de dépasser */
+}
+
+canvas {
+    z-index: 0;
+    background: rgb(83, 83, 83);
+    display: block;
+    position : absolute;
+    cursor: crosshair;
+}
+
+.bubble { /*Permet de faire la bulle quand hover*/
+    opacity: 0;
+    position: absolute;
+    transform: translate(-50%,-150%);
+    background-color: #8f2121;
+    color: white;
+    font-size:30px;/*Size of the text*/
+    padding: 0 2vh;
+    border-radius: 8px;
+    z-index: 2;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    justify-content: center;
+    left : 50%;
+    top : 95%;
+    transform: translate(-50%);
+    border-width: 20px;
+    border-style: solid;
+    border-color: #8f2121 transparent transparent transparent;/*Pour faire le triangle*/
+    pointer-events: none;
+}
+
+.containerBottom{
+    position: absolute;
+    z-index: 2;
+    bottom:150px;
+    right: 50vw;
+    transform: translate(50%, 50%);
+    border-radius: 25px;
+    display: flex;
+    background-color: #000000;
+    border: 7px solid #000000;
+    height:120px;
+    overflow: hidden; /* Empêche la grille de dépasser */
+}
+
+.color-grid {
+    z-index : 3;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(2, 50%);
+    
+}
+
+.color {
+    z-index : 3;
+    width: 50px;
+    background-color: #ffffff;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.containerPower{
+    content: "5";
+    display: flex;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    left: 0px;
+    margin: 0% auto;
+    border-radius: 90px;
+    background-color: #ff8400e7;
+    border: 4px solid #000000;
+    transition: transform 0.6s;
+    z-index: 4;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-grid .color{
+    touch-action : manipulation;
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+    -ms-user-select: auto !important;
+    pointer-events: auto !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+.imageFile-controls {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    z-index: 3;
+}
+
+a {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#affichePseudo {
+    position: absolute;
+    bottom: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    color: #fff;
+    z-index: 4;
+    pointer-events: none; /* optionnel : le texte ne bloque pas les clics */
+    text-shadow: 0 0 4px #000;
+}

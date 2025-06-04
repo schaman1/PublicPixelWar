@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Georgia",sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    background: url(../images/bgWaiting.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.box{
+    width: 420px;
+    background :transparent;
+    border:2px solid rgba(255, 255, 255, 0.2);
+    color : #fff;
+    border-radius : 12px;
+    padding : 30px 40px;
+}
+.box h1{
+    font-size: 36px;
+    text-align: center;
+}
+.box h2{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}

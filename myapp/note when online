@@ -1,0 +1,3 @@
+- Change bdd du global pour mettre False quand lance project
+- Cookie modifier
+- enlever les console.log (dans .js serveur)

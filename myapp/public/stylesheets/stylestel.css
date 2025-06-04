@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none; /* Safari/iOS */
+    -ms-user-select: none;  
+    touch-action: manipulation;
+}
+
+.BtnReload {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20; /* supérieur à .background */
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.background {
+    display : flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bgGridTel.png');
+    background-size: cover;      /* ajuste l'image sans déformation */
+    background-position: center; /* centre l'image */
+    background-repeat: no-repeat;
+    transition : transform 3s cubic-bezier(.67,0,.08,.9);
+    z-index: 11; /* derrière le reste du contenu */
+}
+.background.slide-up {
+    transform: translateY(-100vh);
+}
+
+.containerTop{
+    position : relative;
+    height:10dvh;
+    width : 100dvw;
+    margin: 5% auto; /* CENTRE le container horizontalement */
+    align-items: center;
+}
+
+.containerTopTittle{
+    display: flex;
+    position : relative;
+    width : 200px;
+    margin: 5% auto; /* CENTRE le container horizontalement */
+    border-radius: 40px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ff8400a2;
+    border: 4px solid #000000;
+    z-index: 4;
+}
+
+.animation{
+    backface-visibility: visible;
+}
+
+h1 {
+    display :inline;
+    margin-bottom: 0dvw;
+    font-size:40px;
+}
+
+.containerTop button{
+    background-color: #000000;
+    color : white;
+
+}
+
+.container {
+    display: flex;
+    overflow: hidden;
+    position : absolute;
+    width : 100dvw;
+    top: 0dvw;
+}
+
+.bubble { /*Permet de faire la bulle quand hover*/
+    opacity: 0;
+    position: absolute;
+    transform: translate(-50%,-150%);
+    background-color: #8f2121;
+    color: white;
+    font-size:30px;/*Size of the text*/
+    padding: 0 2vw;
+    border-radius: 8px;
+    z-index: 2;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    justify-content: center;
+    left : 50%;
+    top : 95%;
+    transform: translate(-50%);
+    border-width: 15px;
+    border-style: solid;
+    border-color: #8f2121 transparent transparent transparent;/*Pour faire le triangle*/
+    pointer-events: none;
+}
+
+.containerBottom{
+    z-index: 2;
+    position: absolute;
+    bottom:50px;
+    right: 50dvw;
+    transform: translate(50%, 50%);
+    border-radius: 20px;
+    display: flex;
+    background-color: #000000;
+    border: 5px solid #000000;
+    margin : 0 auto;
+    height:80px;
+}
+
+.containerPower{
+    content: "5";
+    display: flex;
+    position: relative;
+    height: 40px;
+    min-width: 40px;
+    left: 0px;
+    margin: 0% auto;
+    border-radius: 90px;
+    background-color: #ff9500;
+    border: 4px solid #000000;
+    transition: transform 0.6s;
+    z-index: 4;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-grid {
+    margin : 0 auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(2, 50%);
+    border: 3px solid #00000000;
+    border-radius: 20px;
+    pointer-events: auto;
+}
+
+.color {
+    width: 35px;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: none;
+    outline : none;
+}
+
+.color-grid .color{
+    touch-action : manipulation;
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+    -ms-user-select: auto !important;
+    pointer-events: auto !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    display : none; /*Arrive pas a le faire marche = le met en none pour le moment*/
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 9999 !important;
+    background: red !important;  /* test visuel */
+    pointer-events: auto !important;
+}
+
+#affichePseudo {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    color: #fff;
+    z-index: 5;
+    pointer-events: none; /* optionnel : le texte ne bloque pas les clics */
+    text-shadow: 0 0 4px #000;
+}

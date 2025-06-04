@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylesheets/styleLogin.css">
+
+</head>
+<body>
+    <div class="tutoWrapper" id="tutoWrapper">
+        <button type="button"class="nextBtn" id="nextBtn">Suivant</button>
+        <img class="tutoImg" id="tutoImg" src="/images/Pixel war.png" alt="Tutoriel image"">
+    </div>
+
+    <div class="wrapper" style="display:none" id="wrapper">
+        <h1>Login</h1>
+        <form method="post" action = "/login">
+            <div class="inputBox">
+                <input type="text" placeholder="Username" id="pseudo" name = "pseudo" class="inputField" maxlength="15" required  >
+            </div>
+            <select name="CurrentClass" id="CurrentClass" class = "selectClass">
+                <option value ="TG01">TG01</option>
+                <option value ="TG02">TG02</option>
+                <option value ="TG03">TG03</option>
+                <option value ="TG04">TG04</option>
+                <option value ="TG05">TG05</option>
+                <option value ="TG06">TG06</option>
+                <option value ="TG07">TG07</option>
+                <option value ="TG08">TG08</option>
+                <option value ="TG09">TG09</option>
+                <option value ="1G01">1G01</option>
+                <option value ="1G02">1G02</option>
+                <option value ="1G03">1G03</option>
+                <option value ="1G04">1G04</option>
+                <option value ="1G05">1G05</option>
+                <option value ="1G06">1G06</option>
+                <option value ="1G07">1G07</option>
+                <option value ="1G08">1G08</option>
+                <option value ="1G09">1G09</option>
+                <option value ="2GT01">2GT01</option>
+                <option value ="2GT02">2GT02</option>
+                <option value ="2GT03">2GT03</option>
+                <option value ="2GT04">2GT04</option>
+                <option value ="2GT05">2GT05</option>
+                <option value ="2GT06">2GT06</option>
+                <option value ="2GT07">2GT07</option>
+                <option value ="2GT08">2GT08</option>
+                <option value ="2GT09">2GT09</option>
+                <option value ="Prof">Prof</option>
+                <option value ="Autres">Autres</option>
+            </select>
+            <div class="inputBox">
+                <button type = "submit" name = "button" id ="loginButton" class = "inputSubmit">Creer</button>
+            </div>
+            <div style="color: #000; font-weight: bold; background: #ffffff79; padding: 6px 12px; border-radius: 8px; display: inline-block; margin-top: 10px;"><%= info %></div>
+
+        </form>
+    </div>
+    <script src="javascripts/login-script.js"></script>
+</body>
+</html>
